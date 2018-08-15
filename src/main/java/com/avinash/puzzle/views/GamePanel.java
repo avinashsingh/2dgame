@@ -25,6 +25,7 @@ public class GamePanel extends Panel {
     private Panel scorePanel;
     protected MessagePanel messagePanel;
     private ExperienceChangeListener experienceChangeListener;
+    private WeaponSuperiority weaponSuperiority = new WeaponSuperiority();
 
     public GamePanel(int startX, int startY, int width, int height, IGameGround gameGround, GameCharacter player, Panel scorePanel, ExperienceChangeListener experienceChangeListener) {
         super(startX, startY, width, height);
@@ -124,7 +125,7 @@ public class GamePanel extends Panel {
         // if any weapon with player is better than any weapon with enemy, player wins
         for (Weapon playerWeapon : player.getWeapons()) {
             for (Weapon enemyWeapon: enemyCharacter.getWeapons()) {
-                Weapon superior = WeaponSuperiority.getInstance().findSuperior(enemyWeapon, playerWeapon);
+                Weapon superior = weaponSuperiority.findSuperior(enemyWeapon, playerWeapon);
                 if (superior == playerWeapon) {
                     won = true;
                     break;

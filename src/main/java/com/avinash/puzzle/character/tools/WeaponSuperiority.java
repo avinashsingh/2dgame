@@ -17,13 +17,7 @@ package com.avinash.puzzle.character.tools;
  */
 public class WeaponSuperiority {
 	
-	public static final WeaponSuperiority WEAPON_SUPERIORITY = new WeaponSuperiority();
-	
-	public static WeaponSuperiority getInstance () {
-		return WEAPON_SUPERIORITY;
-	}
-	
-	private WeaponSuperiority () {}
+	public WeaponSuperiority () {}
 	
 	public Weapon findSuperior (Weapon weapon1, Weapon weapon2) {
 		int weapon1PowerIndex = weapon1.getPowerIndex();
